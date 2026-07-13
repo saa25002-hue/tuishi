@@ -177,25 +177,56 @@
         </div>
     </section>
 
-    <!-- ストーリーイントロ -->
-    <section id="story" class="py-20 bg-nasu-950 relative">
-        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
-            <span class="text-xs font-extrabold text-purple-400 tracking-widest uppercase block">The Story</span>
-            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">
-                「これが本当にナスなのか」
-            </h2>
-            <p class="text-sm md:text-base text-purple-300 font-medium italic">
-                ― 手にした瞬間の圧倒的な張りと、包丁を入れた瞬間の溢れる果汁。
-            </p>
-            <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-meisui-500 mx-auto rounded-full"></div>
-            <div class="space-y-6 text-gray-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto pt-4">
-                <p>
-                    愛媛県西条市で古くから大切に守り育てられてきた<strong>「絹皮なす」</strong>。
-                    その名の通り、絹のように薄く柔らかな皮と、あふれんばかりの水分をたたえた極上の果肉は、一度味わうと忘れられない特別な食体験になります。
-                </p>
-                <p>
-                    皮が極めて薄いため、少しの風で葉がこすれるだけで傷がついてしまうデリケートさ。大量流通が難しく、かつては地元だけで消費されていたことから、いつしか <strong class="text-meisui-400 font-semibold">“幻 of 伝統野菜”</strong> と呼ばれるようになりました。
-                </p>
+    <!-- ストーリーイントロ ＆ kinukawa.png -->
+    <section id="story" class="py-20 bg-nasu-950 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- 左側：テキストストーリー -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <span class="text-xs font-extrabold text-purple-400 tracking-widest uppercase block">The Story</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">
+                        「これが本当にナスなのか」
+                    </h2>
+                    <p class="text-sm md:text-base text-purple-300 font-medium italic">
+                        ― 手にした瞬間の圧倒的な張りと、包丁を入れた瞬間の溢れる果汁。
+                    </p>
+                    <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-meisui-500 rounded-full"></div>
+                    <div class="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                        <p>
+                            愛媛県西条市で古くから大切に守り育てられてきた<strong>「絹皮なす」</strong>。
+                            その名の通り、絹のように薄く柔らかな皮と、あふれんばかりの水分をたたえた極上の果肉は、一度味わうと忘れられない特別な食体験になります。
+                        </p>
+                        <p>
+                            皮が極めて薄いため、少しの風で葉がこすれるだけで傷がついてしまうデリケートさ。大量流通が難しく、かつては地元だけで消費されていたことから、いつしか <strong class="text-meisui-400 font-semibold">“幻 of 伝統野菜”</strong> と呼ばれるようになりました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 右側：追加された kinukawa.png ビジュアルエリア -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                    <div class="relative p-1.5 bg-gradient-to-tr from-purple-800 to-meisui-400 rounded-3xl shadow-xl overflow-hidden group max-w-sm w-full">
+                        <div class="bg-nasu-900 rounded-[22px] p-6 text-center space-y-4 border border-purple-500/10">
+                            <!-- 絹皮なすイメージ画像 kinukawa.png -->
+                            <div class="overflow-hidden rounded-xl bg-purple-950/60 p-4 border border-purple-500/20 shadow-inner">
+                                <img 
+                                    src="kinukawa.png" 
+                                    alt="絹皮なす ブランドロゴ・イメージ" 
+                                    class="mx-auto max-h-48 object-contain transition duration-500 group-hover:scale-105"
+                                    onerror="this.src='https://placehold.co/300x200/4c1d95/ffffff?text=Kinukawa+Nasu'"
+                                />
+                            </div>
+                            <div>
+                                <span class="bg-purple-950 text-purple-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-purple-500/30">
+                                    Official Brand Asset
+                                </span>
+                                <h4 class="text-base font-bold text-white mt-2">西条市認定特産ブランド</h4>
+                                <p class="text-xs text-gray-400 mt-1">
+                                    歴史と美味しさを受け継ぐ、信頼と本物の品質証。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
