@@ -6,10 +6,10 @@
     <title>名水が育む伝統野菜「絹皮なす」 | 愛媛県西条市</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Noto Sans JP / Playfair Display) -->
+    <!-- Google Fonts (Noto Sans JP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -34,12 +34,11 @@
                         },
                         trad: {
                             gold: '#d97706', /* ゴールド */
-                            wood: '#854d0e', /* 写真の木箱に調和するウッドカラー */
+                            wood: '#854d0e',
                         }
                     },
                     fontFamily: {
                         sans: ['Noto Sans JP', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -57,7 +56,6 @@
         html {
             scroll-behavior: smooth;
         }
-        /* 写真を引き立てるフェードインアニメーション */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -73,7 +71,7 @@
     <header class="sticky top-0 z-50 bg-nasu-950/80 blur-bg border-b border-purple-900/30 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3 group">
-                <!-- ナスのアイコン（伝統的な色調） -->
+                <!-- ナスのアイコン -->
                 <svg class="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 100 100" fill="currentColor">
                     <path d="M50,15 C40,15 32,25 32,38 C32,58 40,85 50,85 C60,85 68,58 68,38 C68,25 60,15 50,15 Z" fill="#4c1d95"/>
                     <path d="M50,15 C48,15 45,10 42,8 C40,10 40,16 43,18 C38,18 34,22 35,28 C42,26 48,28 50,33 C52,28 58,26 65,28 C66,22 62,18 57,18 C60,16 60,10 58,8 C55,10 52,15 50,15 Z" fill="#16a34a"/>
@@ -85,7 +83,7 @@
                 <a href="#story" class="hover:text-meisui-400 transition-colors">絹皮なすとは</a>
                 <a href="#charm" class="hover:text-meisui-400 transition-colors">3つの強み</a>
                 <a href="#recipe" class="hover:text-meisui-400 transition-colors">おすすめレシピ</a>
-                <a href="#saijo" class="hover:text-meisui-400 transition-colors">名水の街</a>
+                <a href="#saijo" class="hover:text-meisui-400 transition-colors">名水の街 & 高校の挑戦</a>
             </nav>
             <div>
                 <a href="#order" class="bg-gradient-to-r from-purple-600 via-purple-700 to-meisui-500 hover:from-purple-500 hover:to-meisui-400 text-white text-xs md:text-sm font-bold px-5 py-2.5 rounded-full shadow-lg hover:shadow-purple-500/20 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-1.5">
@@ -138,15 +136,15 @@
                     
                     <!-- メイン画像フレーム -->
                     <div class="relative bg-nasu-900 border border-purple-500/20 rounded-3xl overflow-hidden shadow-2xl transition duration-500 hover:scale-[1.02]">
+                        <!-- onerrorを排除し、画像がそのまま100%ロードされるよう設定 -->
                         <img 
                             src="image_f0ceba.jpg" 
                             alt="愛媛県西条市産 特産 絹皮なす" 
                             class="w-full h-auto object-cover"
-                            onerror="this.onerror=null; this.src='https://placehold.co/800x450/4c1d95/ffffff?text=Kinukawa+Nasu'"
                         />
                         
                         <!-- 写真に重ねるグラデーションオーバーレイ -->
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-nasu-950/90 via-nasu-950/30 to-transparent p-6 pt-20">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-nasu-950/95 via-nasu-950/40 to-transparent p-6 pt-20">
                             <div class="flex items-center justify-between">
                                 <div>
                                     <p class="text-xs text-meisui-400 font-bold uppercase tracking-wider">Actual Product Image</p>
@@ -360,7 +358,7 @@
         </div>
     </section>
 
-    <!-- 名水の街・西条紹介 -->
+    <!-- 名水の街・西条紹介 ＆ 西条農業高校 -->
     <section id="saijo" class="py-24 bg-gradient-to-t from-nasu-950 to-nasu-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -483,7 +481,7 @@
                         <div class="bg-black/60 p-6 sm:p-8 rounded-2xl border border-purple-500/20 text-left space-y-4 shadow-xl">
                             <div class="flex justify-between items-start pb-4 border-b border-purple-900/50">
                                 <div class="flex gap-3">
-                                    <!-- カート用の超小型イメージプレビュー (image_f0ceba.jpg) -->
+                                    <!-- カート用の超小型イメージプレビュー（onerror無しで完全ロード） -->
                                     <div class="w-16 h-16 rounded-xl overflow-hidden bg-nasu-900 border border-purple-500/20 flex-shrink-0">
                                         <img src="image_f0ceba.jpg" alt="ミニなす画像" class="w-full h-full object-cover">
                                     </div>
