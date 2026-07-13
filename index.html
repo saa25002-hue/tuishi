@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>幻の伝統野菜「絹皮なす」紹介 | 愛媛県西条市</title>
+    <title>名水が育む伝統野菜「絹皮なす」 | 愛媛県西条市</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Noto Sans JP) -->
+    <!-- Google Fonts (Noto Sans JP / Playfair Display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome (Icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -21,143 +21,151 @@
                         nasu: {
                             50: '#f5f2ff',
                             100: '#ede7ff',
-                            500: '#6d28d9', /* ナス紺のベース */
+                            200: '#ddd2fe',
+                            500: '#6d28d9', /* ナス紺ベース */
                             800: '#3b0764', /* 深いナス紫 */
-                            900: '#1e0036', /* 極めて深い紫 */
+                            900: '#1a002e', /* 極めて深い紫 */
+                            950: '#0f001d', /* 漆黒に近い紫 */
                         },
                         meisui: {
                             400: '#38bdf8', /* 名水のライトブルー */
                             500: '#0ea5e9', /* 澄んだ名水の青 */
                             600: '#0284c7',
+                        },
+                        trad: {
+                            gold: '#d97706', /* ゴールド */
+                            wood: '#854d0e', /* 写真の木箱に調和するウッドカラー */
                         }
                     },
                     fontFamily: {
                         sans: ['Noto Sans JP', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes wave {
-            0%, 100% { transform: translateY(0) scaleY(1); }
-            50% { transform: translateY(-5px) scaleY(1.02); }
-        }
-        .animate-wave {
-            animation: wave 4s ease-in-out infinite;
-        }
         .blur-bg {
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
         }
         .gradient-text {
-            background: linear-gradient(135deg, #a78bfa, #38bdf8);
+            background: linear-gradient(135deg, #c084fc, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* スムーススクロール */
         html {
             scroll-behavior: smooth;
         }
+        /* 写真を引き立てるフェードインアニメーション */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
     </style>
 </head>
-<body class="bg-nasu-900 text-gray-100 min-h-screen font-sans selection:bg-meisui-500 selection:text-white">
+<body class="bg-nasu-950 text-gray-100 min-h-screen font-sans selection:bg-meisui-500 selection:text-white overflow-x-hidden">
 
     <!-- ヘッダー / ナビゲーション -->
-    <header class="sticky top-0 z-50 bg-nasu-900/80 blur-bg border-b border-purple-900/40 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <header class="sticky top-0 z-50 bg-nasu-950/80 blur-bg border-b border-purple-900/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3 group">
-                <!-- ナスのアイコン（SVG） -->
+                <!-- ナスのアイコン（伝統的な色調） -->
                 <svg class="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 100 100" fill="currentColor">
                     <path d="M50,15 C40,15 32,25 32,38 C32,58 40,85 50,85 C60,85 68,58 68,38 C68,25 60,15 50,15 Z" fill="#4c1d95"/>
-                    <path d="M50,15 C48,15 45,10 42,8 C40,10 40,16 43,18 C38,18 34,22 35,28 C42,26 48,28 50,33 C52,28 58,26 65,28 C66,22 62,18 57,18 C60,16 60,10 58,8 C55,10 52,15 50,15 Z" fill="#15803d"/>
+                    <path d="M50,15 C48,15 45,10 42,8 C40,10 40,16 43,18 C38,18 34,22 35,28 C42,26 48,28 50,33 C52,28 58,26 65,28 C66,22 62,18 57,18 C60,16 60,10 58,8 C55,10 52,15 50,15 Z" fill="#16a34a"/>
                     <circle cx="48" cy="40" r="3" fill="#ffffff" opacity="0.6"/>
                 </svg>
-                <span class="text-xl font-black tracking-wider text-white">名水育ち <span class="text-meisui-400">絹皮なす</span></span>
+                <span class="text-lg md:text-xl font-black tracking-wider text-white">名水育ち <span class="text-meisui-400">絹皮なす</span></span>
             </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+            <nav class="hidden md:flex space-x-8 text-xs lg:text-sm font-medium">
                 <a href="#story" class="hover:text-meisui-400 transition-colors">絹皮なすとは</a>
-                <a href="#charm" class="hover:text-meisui-400 transition-colors">3つの秘密</a>
-                <a href="#recipe" class="hover:text-meisui-400 transition-colors">絶品レシピ</a>
-                <a href="#saijo" class="hover:text-meisui-400 transition-colors">名水の街・西条</a>
+                <a href="#charm" class="hover:text-meisui-400 transition-colors">3つの強み</a>
+                <a href="#recipe" class="hover:text-meisui-400 transition-colors">おすすめレシピ</a>
+                <a href="#saijo" class="hover:text-meisui-400 transition-colors">名水の街</a>
             </nav>
             <div>
-                <a href="#order" class="bg-gradient-to-r from-purple-600 to-meisui-500 hover:from-purple-500 hover:to-meisui-400 text-white text-xs md:text-sm font-bold px-5 py-2.5 rounded-full shadow-lg hover:shadow-purple-500/20 transition duration-300 transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-shopping-cart mr-1.5"></i>お取り寄せ体験
+                <a href="#order" class="bg-gradient-to-r from-purple-600 via-purple-700 to-meisui-500 hover:from-purple-500 hover:to-meisui-400 text-white text-xs md:text-sm font-bold px-5 py-2.5 rounded-full shadow-lg hover:shadow-purple-500/20 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-bag-shopping"></i>お取り寄せ体験
                 </a>
             </div>
         </div>
     </header>
 
     <!-- ヒーローセクション -->
-    <section class="relative py-20 md:py-32 overflow-hidden flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-nasu-800 via-nasu-900 to-black">
-        <!-- 背景の水の泡の装飾 -->
+    <section class="relative py-12 md:py-24 overflow-hidden flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-nasu-900 via-nasu-950 to-black">
+        <!-- 背景のグラデーションのゆらぎ -->
         <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <div class="absolute top-10 left-10 w-72 h-72 rounded-full bg-meisui-500 filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-10 left-10 w-80 h-80 rounded-full bg-meisui-500 filter blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-[450px] h-[450px] rounded-full bg-purple-700 filter blur-3xl"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             <!-- テキストエリア -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <span class="inline-block bg-purple-900/60 border border-purple-500/30 text-purple-300 text-xs font-bold px-3 py-1.5 rounded-full tracking-widest uppercase">愛媛県西条市 幻の伝統野菜</span>
-                <h1 class="text-4xl md:text-6xl font-black leading-tight text-white tracking-tight">
-                    まるで、<br class="hidden md:block">
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-left animate-fade-in">
+                <div class="inline-flex items-center gap-2 bg-purple-950/80 border border-purple-500/30 text-purple-300 text-xs font-bold px-4 py-2 rounded-full tracking-widest uppercase shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    愛媛県西条市産 幻の伝統野菜
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white tracking-tight">
+                    まるで、<br>
                     <span class="gradient-text">みずみずしい果実。</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+                <p class="text-base sm:text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
                     ひと口食べれば、これまでのナスの常識がガラリと覆る。<br>
-                    絹のように薄く柔らかな皮と、あふれんばかりの湧き水をたたえた極上のジューシーさ。
+                    絹のように薄く柔らかな皮と、あふれんばかりの名水をたたえた極上のジューシーさを、産地直送の贅沢で。
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#recipe" class="bg-purple-600 hover:bg-purple-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                    <a href="#recipe" class="bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
                         <span>美味しい食べ方を見る</span>
-                        <i class="fa-solid fa-utensils"></i>
+                        <i class="fa-solid fa-utensils text-purple-300"></i>
                     </a>
-                    <a href="#story" class="border border-gray-600 hover:border-white hover:bg-white/5 text-gray-300 hover:text-white font-bold px-8 py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2">
-                        <span>魅力を詳しく知る</span>
-                        <i class="fa-solid fa-circle-down"></i>
+                    <a href="#story" class="border border-purple-800/60 bg-purple-950/20 hover:border-purple-400 hover:bg-purple-900/20 text-gray-300 hover:text-white font-bold px-8 py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2">
+                        <span>歴史と魅力を知る</span>
+                        <i class="fa-solid fa-arrow-down text-purple-400"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- ビジュアルエリア（ナスのSVG） -->
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center">
-                    <!-- 背景の光輪 -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-meisui-500/30 rounded-full filter blur-2xl animate-pulse"></div>
-                    <!-- 浮遊するみずみずしいナスのイラスト -->
-                    <div class="relative z-10 animate-wave">
-                        <svg class="w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_20px_50px_rgba(109,40,217,0.4)]" viewBox="0 0 200 200" fill="none">
-                            <!-- ナスの本体 -->
-                            <path d="M100,50 C70,50 50,75 50,110 C50,150 72,180 100,180 C128,180 150,150 150,110 C150,75 130,50 100,50 Z" fill="url(#nasuGrad)"/>
-                            <!-- ナスの艶 -->
-                            <path d="M72,100 C68,115 72,135 80,145 C75,135 72,115 75,100 C76,95 78,92 72,100 Z" fill="#ffffff" opacity="0.3"/>
-                            <!-- ナスのヘタ（萼） -->
-                            <path d="M100,50 C95,50 88,40 82,35 C78,38 78,48 83,52 C73,52 65,58 68,68 C80,65 92,68 100,78 C108,68 120,65 132,68 C135,58 127,52 117,52 C122,48 122,38 118,35 C112,40 105,50 100,50 Z" fill="url(#greenGrad)"/>
-                            <!-- 茎 -->
-                            <path d="M100,35 Q102,20 95,15 Q92,15 91,20 Q95,30 100,35 Z" fill="#14532d"/>
-                            <!-- 水滴のきらめき -->
-                            <circle cx="120" cy="110" r="4" fill="#38bdf8" opacity="0.8"/>
-                            <circle cx="128" cy="120" r="2.5" fill="#38bdf8" opacity="0.8"/>
-                            <circle cx="78" cy="125" r="3" fill="#ffffff" opacity="0.7"/>
-                            
-                            <!-- グラデーション定義 -->
-                            <defs>
-                                <radialGradient id="nasuGrad" cx="40%" cy="40%" r="60%">
-                                    <stop offset="0%" stop-color="#8b5cf6"/>
-                                    <stop offset="50%" stop-color="#4c1d95"/>
-                                    <stop offset="100%" stop-color="#1e0036"/>
-                                </radialGradient>
-                                <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stop-color="#22c55e"/>
-                                    <stop offset="100%" stop-color="#14532d"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <!-- 水しぶき・泡（装飾） -->
-                        <span class="absolute top-10 right-10 bg-meisui-500/20 border border-meisui-400 text-meisui-300 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg backdrop-blur-sm">
-                            <i class="fa-solid fa-droplet text-meisui-400"></i>水分含有率90%以上
-                        </span>
+            <!-- ビジュアルエリア（本物のなす画像 image_f0ceba.jpg） -->
+            <div class="lg:col-span-6 flex justify-center animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="relative w-full max-w-lg md:max-w-xl">
+                    <!-- 背景のプレミアム光背エフェクト -->
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-meisui-500 to-amber-500 rounded-3xl blur-xl opacity-35 animate-pulse"></div>
+                    
+                    <!-- メイン画像フレーム -->
+                    <div class="relative bg-nasu-900 border border-purple-500/20 rounded-3xl overflow-hidden shadow-2xl transition duration-500 hover:scale-[1.02]">
+                        <img 
+                            src="image_f0ceba.jpg" 
+                            alt="愛媛県西条市産 特産 絹皮なす" 
+                            class="w-full h-auto object-cover"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x450/4c1d95/ffffff?text=Kinukawa+Nasu'"
+                        />
+                        
+                        <!-- 写真に重ねるグラデーションオーバーレイ -->
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-nasu-950/90 via-nasu-950/30 to-transparent p-6 pt-20">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-meisui-400 font-bold uppercase tracking-wider">Actual Product Image</p>
+                                    <h2 class="text-lg font-bold text-white flex items-center gap-1.5">
+                                        <i class="fa-solid fa-certificate text-amber-500 text-sm"></i>
+                                        西条の畑より 採れたてをお届け
+                                    </h2>
+                                </div>
+                                <span class="bg-amber-600/95 border border-amber-500 text-white text-[10px] sm:text-xs font-black px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
+                                    <i class="fa-solid fa-water text-meisui-300"></i>水分含有率90%以上
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 写真の補足キャプション -->
+                    <div class="absolute -bottom-6 -right-4 bg-nasu-800 border border-purple-500/30 px-4 py-2.5 rounded-xl text-xs text-purple-200 shadow-xl hidden sm:flex items-center gap-2">
+                        <i class="fa-regular fa-image text-amber-500 text-sm"></i>
+                        <span>職人の手仕事が伝わる伝統パッケージ</span>
                     </div>
                 </div>
             </div>
@@ -165,28 +173,30 @@
         
         <!-- 下部の波形グラデーション区切り -->
         <div class="absolute bottom-0 w-full overflow-hidden leading-[0] fill-nasu-950">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[40px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[35px]">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,53.05,22,79.54,33.21,141.77,59.5,210.45,67,278.26,60.82Z"></path>
             </svg>
         </div>
     </section>
 
     <!-- ストーリーイントロ -->
-    <section id="story" class="py-20 bg-nasu-950">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-sm font-bold text-meisui-400 tracking-widest uppercase mb-2">The Story</h2>
-            <p class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-8">
-                「これが本当にナスなの…？」
+    <section id="story" class="py-20 bg-nasu-950 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+            <span class="text-xs font-extrabold text-purple-400 tracking-widest uppercase block">The Story</span>
+            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">
+                「これが本当にナスなのか」
+            </h2>
+            <p class="text-sm md:text-base text-purple-300 font-medium italic">
+                ― 手にした瞬間の圧倒的な張りと、包丁を入れた瞬間の溢れる果汁。
             </p>
-            <div class="space-y-6 text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-meisui-500 mx-auto rounded-full"></div>
+            <div class="space-y-6 text-gray-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto pt-4">
                 <p>
-                    ひと口食べれば、これまでのナスの常識がガラリと覆ります。
+                    愛媛県西条市で古くから大切に守り育てられてきた<strong>「絹皮なす」</strong>。
+                    その名の通り、絹のように薄く柔らかな皮と、あふれんばかりの水分をたたえた極上の果肉は、一度味わうと忘れられない特別な食体験になります。
                 </p>
                 <p>
-                    愛媛県西条市で古くから大切に守り育てられてきた「絹皮なす」。その名の通り、絹のように薄く柔らかな皮と、あふれんばかりの水分をたたえたジューシーな果肉は、一度味わうと忘れられない特別な食体験になります。
-                </p>
-                <p>
-                    デリケートさゆえに大量流通が難しく、かつては地元だけで消費されていたことから、いつしか <strong class="text-meisui-400 font-semibold">“幻の伝統野菜”</strong> と呼ばれるようになりました。
+                    皮が極めて薄いため、少しの風で葉がこすれるだけで傷がついてしまうデリケートさ。大量流通が難しく、かつては地元だけで消費されていたことから、いつしか <strong class="text-meisui-400 font-semibold">“幻 of 伝統野菜”</strong> と呼ばれるようになりました。
                 </p>
             </div>
         </div>
@@ -194,58 +204,59 @@
 
     <!-- 3つの際立つ魅力 -->
     <section id="charm" class="py-24 bg-gradient-to-b from-nasu-950 to-nasu-900 relative">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-sm font-bold text-purple-400 tracking-widest uppercase mb-2">Our Secret</h2>
+                <span class="text-xs font-bold text-meisui-400 tracking-widest uppercase block mb-2">Our Secret</span>
                 <h3 class="text-3xl md:text-4xl font-black text-white">絹皮なすを紐解く「3つの魅力」</h3>
+                <p class="text-sm text-gray-400 mt-2">他とは全く異なる、名水が生んだ奇跡の野菜</p>
                 <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-meisui-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- 魅力1 -->
-                <div class="bg-nasu-800/40 border border-purple-500/10 p-8 rounded-2xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-purple-900/50 rounded-xl flex items-center justify-center text-purple-400 text-xl font-bold mb-6 border border-purple-500/20">
-                            01
+                <div class="bg-nasu-900/40 border border-purple-500/10 p-8 rounded-3xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/35 hover:-translate-y-1 transition duration-300 flex flex-col justify-between relative group">
+                    <div class="absolute -top-4 -left-2 text-7xl font-black text-purple-900/15 group-hover:text-purple-900/30 transition-colors pointer-events-none select-none">01</div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-950/80 rounded-2xl flex items-center justify-center text-purple-400 text-lg font-bold mb-6 border border-purple-500/20">
+                            <i class="fa-solid fa-mountain-sun text-meisui-400"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-mountain text-purple-400"></i>
+                        <h4 class="text-xl font-bold text-white mb-4">
                             名水「うちぬき」の恵み
                         </h4>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            西日本最高峰・石鎚山の麓に位置する「水の都・西条」。街のあちこちから湧き出るミネラル豊富な自噴水「うちぬき」を、丸々と太るまで贅沢に吸い上げて育ちます。西条の清らかな風土こそが、このみずみずしさを生む源です。
+                            西日本最高峰・石鎚山の麓に位置する「水の都・西条」。街のあちこちから湧き出るミネラル豊富な自噴水「うちぬき」を、果実に近くなるまで贅沢に吸い上げて育ちます。清らかな水こそが、この極限のみずみずしさを生む源です。
                         </p>
                     </div>
                 </div>
 
                 <!-- 魅力2 -->
-                <div class="bg-nasu-800/40 border border-purple-500/10 p-8 rounded-2xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-purple-900/50 rounded-xl flex items-center justify-center text-purple-400 text-xl font-bold mb-6 border border-purple-500/20">
-                            02
+                <div class="bg-nasu-900/40 border border-purple-500/10 p-8 rounded-3xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/35 hover:-translate-y-1 transition duration-300 flex flex-col justify-between relative group">
+                    <div class="absolute -top-4 -left-2 text-7xl font-black text-purple-900/15 group-hover:text-purple-900/30 transition-colors pointer-events-none select-none">02</div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-950/80 rounded-2xl flex items-center justify-center text-purple-400 text-lg font-bold mb-6 border border-purple-500/20">
+                            <i class="fa-solid fa-feather-pointed text-purple-400"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-feather text-purple-400"></i>
+                        <h4 class="text-xl font-bold text-white mb-4">
                             口の中でとろける「絹の皮」
                         </h4>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            一般的なナスと比べてひと回り大きく丸みを帯びた形状ですが、最大の特長はその「皮の薄さ」。まるで巾着のようになめらかで、噛むと驚くほど口に残りません。さらに果肉は、トロリと舌の上でとろけるような柔らかさです。
+                            一般的なナスに比べて丸々と大ぶりですが、最大の強みはその名の通り「皮の薄さ」。噛んだ瞬間に口の中で邪魔をせず、驚くほどスッと消えていきます。さらに果肉はとろとろのスポンジのように出汁をよく含みます。
                         </p>
                     </div>
                 </div>
 
                 <!-- 魅力3 -->
-                <div class="bg-nasu-800/40 border border-purple-500/10 p-8 rounded-2xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/30 hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-purple-900/50 rounded-xl flex items-center justify-center text-purple-400 text-xl font-bold mb-6 border border-purple-500/20">
-                            03
+                <div class="bg-nasu-900/40 border border-purple-500/10 p-8 rounded-3xl shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/35 hover:-translate-y-1 transition duration-300 flex flex-col justify-between relative group">
+                    <div class="absolute -top-4 -left-2 text-7xl font-black text-purple-900/15 group-hover:text-purple-900/30 transition-colors pointer-events-none select-none">03</div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-950/80 rounded-2xl flex items-center justify-center text-purple-400 text-lg font-bold mb-6 border border-purple-500/20">
+                            <i class="fa-solid fa-map-location-dot text-amber-500"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-gem text-purple-400"></i>
-                            産地でしか出会えない特別感
+                        <h4 class="text-xl font-bold text-white mb-4">
+                            産地だけでしか出会えない
                         </h4>
                         <p class="text-gray-300 text-sm leading-relaxed">
-                            絹のように薄く非常に柔らかい皮は、極めてデリケートで傷つきやすく、長距離輸送には不向きです。そのため、本物のみずみずしい状態で味わえるのは現地・西条市、または産地直送の限られたお取り寄せのみという贅沢な逸品です。
+                            薄すぎる皮は傷がつきやすく、長距離輸送には適しません。本当のおいしさを鮮度抜群で味わえるのは、現地・西条市、または朝採りを産地から直接お届けする限られた注文ルートだけという「プレミアム」な特別感があります。
                         </p>
                     </div>
                 </div>
@@ -257,45 +268,45 @@
     <section id="recipe" class="py-24 bg-nasu-900 relative">
         <div class="max-w-5xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-sm font-bold text-meisui-400 tracking-widest uppercase mb-2">How to Eat</h2>
+                <span class="text-xs font-bold text-purple-400 tracking-widest uppercase block mb-1">How to Eat</span>
                 <h3 class="text-3xl md:text-4xl font-black text-white">素材を極限まで楽しむ「三種の食べ方」</h3>
-                <p class="text-gray-400 text-sm mt-3">お好みの調理法をタップして、詳細な味わい方をご覧ください。</p>
+                <p class="text-gray-400 text-sm mt-3">お好みの調理法をタップして、詳細な味わい方とプロのコツをご覧ください。</p>
             </div>
 
             <!-- タブ選択ボタン -->
-            <div class="flex justify-center space-x-2 md:space-x-4 mb-8 bg-nasu-950/60 p-1.5 rounded-xl border border-purple-900/50 max-w-xl mx-auto">
-                <button onclick="switchRecipe('asazuke')" id="btn-asazuke" class="w-1/3 py-3 px-4 rounded-lg font-bold text-sm transition-all duration-300 bg-gradient-to-r from-purple-600 to-meisui-500 text-white shadow-md">
+            <div class="flex justify-center space-x-1 sm:space-x-4 mb-8 bg-nasu-950/80 p-2 rounded-2xl border border-purple-900/40 max-w-xl mx-auto shadow-inner">
+                <button onclick="switchRecipe('asazuke')" id="btn-asazuke" class="w-1/3 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-purple-600 to-meisui-500 text-white shadow-md">
                     1. 浅漬け
                 </button>
-                <button onclick="switchRecipe('yakinasu')" id="btn-yakinasu" class="w-1/3 py-3 px-4 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all duration-300">
+                <button onclick="switchRecipe('yakinasu')" id="btn-yakinasu" class="w-1/3 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm text-gray-400 hover:text-white transition-all duration-300">
                     2. 焼きナス
                 </button>
-                <button onclick="switchRecipe('tempura')" id="btn-tempura" class="w-1/3 py-3 px-4 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all duration-300">
+                <button onclick="switchRecipe('tempura')" id="btn-tempura" class="w-1/3 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm text-gray-400 hover:text-white transition-all duration-300">
                     3. 天ぷら
                 </button>
             </div>
 
             <!-- レシピコンテンツエリア -->
-            <div class="bg-nasu-800/20 border border-purple-500/20 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="bg-nasu-950/60 border border-purple-500/20 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
                 <!-- 1. 浅漬け -->
                 <div id="recipe-asazuke" class="recipe-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative bg-nasu-950 p-6 rounded-2xl border border-purple-500/10 w-full max-w-xs text-center shadow-lg">
-                            <span class="absolute top-4 right-4 bg-meisui-500/20 text-meisui-300 text-xs font-bold px-2.5 py-1 rounded">お手軽 & 定番</span>
-                            <i class="fa-solid fa-cloud-sun text-6xl text-purple-400 my-4"></i>
+                        <div class="relative bg-nasu-900 p-6 rounded-2xl border border-purple-500/10 w-full max-w-sm text-center shadow-lg">
+                            <span class="absolute top-4 right-4 bg-meisui-500/20 text-meisui-300 text-xs font-bold px-2.5 py-1 rounded">お手軽＆定番</span>
+                            <i class="fa-solid fa-droplet text-5xl text-meisui-400 my-4"></i>
                             <h5 class="text-lg font-bold text-white">パリッと弾ける新鮮食感</h5>
-                            <p class="text-xs text-gray-400 mt-2">素材の水分と皮の薄さを一番ダイレクトに感じられます。</p>
+                            <p class="text-xs text-gray-400 mt-2">皮の薄さと驚異のみずみずしさをそのまま。夏のごちそうです。</p>
                         </div>
                     </div>
                     <div class="lg:col-span-7 space-y-4">
                         <span class="text-xs font-bold text-meisui-400 uppercase tracking-wider">Recipe 01</span>
                         <h4 class="text-2xl font-bold text-white">皮の薄さをダイレクトに楽しむ「浅漬け」</h4>
                         <p class="text-gray-300 leading-relaxed text-sm">
-                            まずはこれ！絹皮なすを贅沢に厚めの半月切り、または薄切りにし、少量の塩や出汁で優しく揉むだけで、極上の浅漬けが完成します。
+                            まずはこれ！絹皮なすを厚めの半月切り（または薄切り）にし、少量の塩や出汁で優しく揉むだけで極上の浅漬けが完成します。雑味が一切ない、澄んだ名水の旨みをご賞味ください。
                         </p>
-                        <div class="bg-purple-900/30 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
-                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5"></i>美味しく作るコツ</p>
-                            <p class="text-gray-300">アクが少ないため、水にさらす時間は極々わずかでOK。お好みで大葉やみょうが、千切り生姜を和えると、夏の最高の肴（さかな）になります。ビールや冷酒、ご飯のお供に完璧です。</p>
+                        <div class="bg-purple-900/20 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
+                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5 text-amber-500"></i>美味しく作るコツ</p>
+                            <p class="text-gray-300">元々アクが非常に少ないため、水にさらす時間はほんの10秒程度で十分。お好みで大葉やみょうが、千切り生姜を和えると、夏の最高の肴（さかな）になります。ビールや冷酒に最適です。</p>
                         </div>
                     </div>
                 </div>
@@ -303,22 +314,22 @@
                 <!-- 2. 焼きナス -->
                 <div id="recipe-yakinasu" class="recipe-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative bg-nasu-950 p-6 rounded-2xl border border-purple-500/10 w-full max-w-xs text-center shadow-lg">
+                        <div class="relative bg-nasu-900 p-6 rounded-2xl border border-purple-500/10 w-full max-w-sm text-center shadow-lg">
                             <span class="absolute top-4 right-4 bg-orange-500/20 text-orange-300 text-xs font-bold px-2.5 py-1 rounded">トロトロ度 MAX</span>
-                            <i class="fa-solid fa-fire text-6xl text-purple-400 my-4"></i>
+                            <i class="fa-solid fa-fire-flame-curved text-5xl text-orange-500 my-4"></i>
                             <h5 class="text-lg font-bold text-white">果肉がとろけだす極致</h5>
-                            <p class="text-xs text-gray-400 mt-2">箸で持ち上げると崩れてしまいそうなほど柔らかな食感。</p>
+                            <p class="text-xs text-gray-400 mt-2">箸で持ち上げると崩れてしまいそうなほどなめらかな食感。</p>
                         </div>
                     </div>
                     <div class="lg:col-span-7 space-y-4">
                         <span class="text-xs font-bold text-meisui-400 uppercase tracking-wider">Recipe 02</span>
                         <h4 class="text-2xl font-bold text-white">トロトロの極致を味わう「焼きナス」</h4>
                         <p class="text-gray-300 leading-relaxed text-sm">
-                            丸ごと皮に切り目を入れ、網やグリルで皮が焦げるまでじっくりと焼き上げます。熱いうちに皮を剥いて、冷ましてから生姜醤油やポン酢をかけるだけで完成です。
+                            丸ごと皮にサッと数本切り入れ、網やグリルで皮が真っ黒に焦げるまでじっくりと強火で焼き上げます。熱いうちに皮を剥いて、冷ましてから生姜醤油やポン酢をかけるだけで、至高の一皿に。
                         </p>
-                        <div class="bg-purple-900/30 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
-                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5"></i>美味しく作るコツ</p>
-                            <p class="text-gray-300">焼き立てをサッと氷水に通して皮を剥くと、綺麗な翡翠（ひすい）色が保てます。口に入れた瞬間にトロリと溶け、まるで上品な和風ジュレを食べているかのような贅沢ななめらかさです。</p>
+                        <div class="bg-purple-900/20 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
+                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5 text-amber-500"></i>美味しく作るコツ</p>
+                            <p class="text-gray-300">焼き立てを氷水に通してサッと皮を剥くと、綺麗な翡翠（ひすい）色が保てます。口に入れた瞬間にトロリと溶け、まるでお出汁のジュレを食べているかのような贅沢ななめらかさです。</p>
                         </div>
                     </div>
                 </div>
@@ -326,22 +337,22 @@
                 <!-- 3. 天ぷら -->
                 <div id="recipe-tempura" class="recipe-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative bg-nasu-950 p-6 rounded-2xl border border-purple-500/10 w-full max-w-xs text-center shadow-lg">
-                            <span class="absolute top-4 right-4 bg-yellow-500/20 text-yellow-300 text-xs font-bold px-2.5 py-1 rounded">旨味を閉じ込める</span>
-                            <i class="fa-solid fa-bowl-food text-6xl text-purple-400 my-4"></i>
+                        <div class="relative bg-nasu-900 p-6 rounded-2xl border border-purple-500/10 w-full max-w-sm text-center shadow-lg">
+                            <span class="absolute top-4 right-4 bg-yellow-500/20 text-yellow-300 text-xs font-bold px-2.5 py-1 rounded">驚異のジューシーさ</span>
+                            <i class="fa-solid fa-hot-tub-person text-5xl text-yellow-500 my-4"></i>
                             <h5 class="text-lg font-bold text-white">サクサク衣と熱々果汁</h5>
-                            <p class="text-xs text-gray-400 mt-2">噛んだ瞬間、中に閉じ込められた高密度の果汁が溢れます。</p>
+                            <p class="text-xs text-gray-400 mt-2">かじった瞬間、閉じ込められていた熱々の天然スープが弾けます。</p>
                         </div>
                     </div>
                     <div class="lg:col-span-7 space-y-4">
                         <span class="text-xs font-bold text-meisui-400 uppercase tracking-wider">Recipe 03</span>
                         <h4 class="text-2xl font-bold text-white">旨味と豊かな果汁を閉じ込める「天ぷら」</h4>
                         <p class="text-gray-300 leading-relaxed text-sm">
-                            大きめにカットした絹皮なすにサッと衣をくぐらせ、高温の油で短時間でサクッと揚げます。衣が壁の役割を果たし、なす自身の水分で中が蒸し焼きになります。
+                            大きめに大胆にカットした絹皮なすに衣を薄くまとわせ、高温の油で短時間でサクッと揚げます。衣がフタの役割を果たし、なす自身の水分で中が極上の蒸し焼き状態になります。
                         </p>
-                        <div class="bg-purple-900/30 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
-                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5"></i>美味しく作るコツ</p>
-                            <p class="text-gray-300">少し厚めに切るのがジューシーさを際立たせる秘訣。一口かじれば、サクッとした軽快な食感のあとに、中から熱々のジュースがジュワッと爆発。熱々のうちにお塩で食べるのが一番の贅沢です。</p>
+                        <div class="bg-purple-900/20 p-4 rounded-xl border border-purple-500/10 space-y-2 text-xs">
+                            <p class="font-bold text-purple-300"><i class="fa-solid fa-lightbulb mr-1.5 text-amber-500"></i>美味しく作るコツ</p>
+                            <p class="text-gray-300">厚めに切ることが果汁をキープする最大の秘訣。一口かじれば、サクッとした衣のあとに熱々の果汁がジュワッと爆発。熱いうちにお塩をパラリとふってシンプルに食べるのが最高のごちそうです。</p>
                         </div>
                     </div>
                 </div>
@@ -351,64 +362,82 @@
 
     <!-- 名水の街・西条紹介 -->
     <section id="saijo" class="py-24 bg-gradient-to-t from-nasu-950 to-nasu-900 relative">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- テキスト -->
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="inline-block bg-meisui-500/20 text-meisui-300 text-xs font-bold px-3 py-1 rounded-full tracking-wider">水の都・西条市のご紹介</span>
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white">
+                    <span class="inline-block bg-meisui-500/20 text-meisui-300 text-xs font-bold px-3 py-1.5 rounded-full tracking-wider">水の都・西条市のご紹介</span>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
                         石鎚山がもたらす極上自噴水<br>
-                        名水「うちぬき」の奇跡
+                        名水「うちぬき」の恵み
                     </h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        西条市は、西日本最高峰・石鎚山の麓に広がる街です。山々に降り注いだ雨雪が、何十年もの歳月をかけて地下深くで濾過され、街の至るところから「うちぬき」と呼ばれる無菌の湧水として自噴しています。
+                    <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        西条市は、西日本最高峰・石鎚山の麓に広がる美しき水の都です。山々に降り注いだ雪解け水が、何十年もの歳月をかけて地下深くで濾過され、街の至るところから「うちぬき」と呼ばれる清らかな湧水として自噴しています。
                     </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        絹皮なすはこの贅沢な天然水を毎日たっぷりと吸収して育ちます。夏、うだるような暑さのなか、澄んだ冷たい湧き水で冷やされた新鮮な絹皮なすを丸かじりするーーそれこそが、この街でしか味わえない至極の贅沢です。
+                    <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        絹皮なすは、この贅沢な天然地下水を毎日たっぷりと吸収して育ちます。夏、うだるような暑さのなか、澄んだ冷たい湧き水で冷やされたもぎたての絹皮なすを丸かじりする――それこそが、この街でしか味わえない極上の贅沢です。
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-water text-meisui-400 text-2xl"></i>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 bg-nasu-900/30 p-4 rounded-2xl border border-purple-500/5">
+                            <i class="fa-solid fa-water text-meisui-400 text-2xl mt-1"></i>
                             <div>
-                                <h5 class="text-white font-bold text-sm">全国名水百選</h5>
-                                <p class="text-gray-400 text-xs">「うちぬき」は3年連続日本一に輝く名水</p>
+                                <h5 class="text-white font-bold text-sm">全国名水百選 日本一</h5>
+                                <p class="text-gray-400 text-xs mt-1">「うちぬき」は水質日本一に何度も輝く超軟水。</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot text-purple-400 text-2xl"></i>
+                        <div class="flex items-start gap-3 bg-nasu-900/30 p-4 rounded-2xl border border-purple-500/5">
+                            <i class="fa-solid fa-store text-purple-400 text-2xl mt-1"></i>
                             <div>
-                                <h5 class="text-white font-bold text-sm">西条市の直売所</h5>
-                                <p class="text-gray-400 text-xs">現地ならではの新鮮野菜が並びます</p>
+                                <h5 class="text-white font-bold text-sm">西条市のJA直売所</h5>
+                                <p class="text-gray-400 text-xs mt-1">朝一番には、もぎたての新鮮野菜がズラリと並びます。</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 西条農業高校の取り組み紹介 -->
+                    <div class="bg-gradient-to-r from-purple-950/60 to-nasu-900/60 p-6 rounded-2xl border border-purple-500/20 space-y-3 mt-6">
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-graduation-cap text-purple-400 text-xl"></i>
+                            <h4 class="text-base font-bold text-white">伝統を未来へつなぐ「西条農業高校」の挑戦</h4>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            地元の愛媛県立西条農業高等学校（通称：西農）では、絹皮なすを贅沢に使ったメニュー開発やスマート農業の実践など、伝統野菜を未来へつなぐ情熱的な活動を授業やプロジェクトを通じて行っています。地域と若者が一体となって育む、瑞々しい未来をぜひ応援してください。
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://ehm-saijo-ah.esnet.ed.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs bg-purple-950 hover:bg-purple-900 text-meisui-400 hover:text-white font-bold py-2 px-4 rounded-xl border border-purple-500/20 transition-all duration-300 group">
+                                <i class="fa-solid fa-school text-purple-400"></i>
+                                <span>愛媛県立西条農業高等学校 公式サイト</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 簡易地図 / ビジュアル風カード -->
-                <div class="lg:col-span-5 bg-nasu-850 border border-purple-500/20 p-6 rounded-3xl shadow-xl space-y-6">
+                <!-- アクセス情報 -->
+                <div class="lg:col-span-5 bg-nasu-900 border border-purple-500/15 p-6 sm:p-8 rounded-3xl shadow-xl space-y-6">
                     <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-map text-meisui-400"></i>
-                        西条市へのアクセス情報
+                        <i class="fa-solid fa-map-location text-meisui-400"></i>
+                        西条市へのアクセス
                     </h4>
                     
-                    <div class="space-y-4 text-sm text-gray-300">
-                        <div class="border-l-2 border-meisui-500 pl-4">
+                    <div class="space-y-4 text-xs sm:text-sm text-gray-300">
+                        <div class="border-l-2 border-meisui-500 pl-4 space-y-1">
                             <p class="font-bold text-white">電車をご利用の場合</p>
-                            <p class="text-gray-400 text-xs mt-1">JR予讃線「伊予西条駅」下車、周辺に湧水スポット多数。</p>
+                            <p class="text-gray-400 text-xs">JR予讃線「伊予西条駅」下車。駅周辺でも湧水を体験可能。</p>
                         </div>
-                        <div class="border-l-2 border-purple-500 pl-4">
+                        <div class="border-l-2 border-purple-500 pl-4 space-y-1">
                             <p class="font-bold text-white">お車をご利用の場合</p>
-                            <p class="text-gray-400 text-xs mt-1">松山自動車道「いよ西条IC」から各直売所まで約10分。</p>
+                            <p class="text-gray-400 text-xs">松山自動車道「いよ西条IC」から各直売所・農園まで車で約10分。</p>
                         </div>
                     </div>
                     
-                    <!-- 疑似地図ビジュアル -->
-                    <div class="h-44 bg-nasu-950 rounded-2xl flex flex-col items-center justify-center border border-purple-900 relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    <!-- マップ代替デザイン -->
+                    <div class="h-48 bg-nasu-950 rounded-2xl flex flex-col items-center justify-center border border-purple-900/40 relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
                         <i class="fa-solid fa-map-pin text-meisui-400 text-4xl animate-bounce mb-2 z-10"></i>
                         <span class="text-xs text-white font-bold tracking-wider z-10">愛媛県西条市 観光エリア</span>
-                        <span class="text-[10px] text-gray-400 mt-1 z-10">松山空港から車で約1時間10分</span>
+                        <span class="text-[10px] text-gray-400 mt-1 z-10">松山空港から高速道路利用で約1時間10分</span>
                     </div>
                 </div>
             </div>
@@ -417,55 +446,85 @@
 
     <!-- お取り寄せ・お試しシミュレーター（ホームページのCVセクション） -->
     <section id="order" class="py-24 bg-gradient-to-b from-nasu-900 to-nasu-950 relative">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-gradient-to-r from-purple-900/60 to-nasu-900/80 border border-purple-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-purple-950 via-nasu-900 to-nasu-950 border border-purple-500/25 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-600/10 rounded-full filter blur-xl"></div>
                 <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-meisui-500/10 rounded-full filter blur-xl"></div>
 
-                <div class="text-center max-w-2xl mx-auto space-y-6 relative z-10">
-                    <span class="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold px-3 py-1.5 rounded-full tracking-wider uppercase inline-flex items-center gap-1">
-                        <i class="fa-solid fa-star"></i> 数量限定・産地直送
-                    </span>
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white">
-                        西条の恵みを、ご自宅で。<br>
-                        「絹皮なす」お取り寄せ体験
-                    </h3>
-                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">
-                        デリケートで希少な幻のなすを、産地から特別な鮮度管理でお届けします。まずは以下の「カートに入れる」ボタンで、ホームページのお買い物体験をお試しください。
-                    </p>
-
-                    <!-- お試し体験シミュレーター -->
-                    <div class="bg-black/40 p-6 rounded-2xl border border-purple-500/20 max-w-md mx-auto text-left space-y-4">
-                        <div class="flex justify-between items-center pb-3 border-b border-purple-900/50">
-                            <div>
-                                <span class="text-xs text-meisui-400 font-bold">極上 朝採れ生パック</span>
-                                <h4 class="text-base font-bold text-white">絹皮なす 特選5個セット</h4>
-                            </div>
-                            <span class="text-xl font-black text-white">¥2,480 <span class="text-xs text-gray-400 font-normal">(税込・送料別)</span></span>
-                        </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <!-- 商品概要 -->
+                    <div class="lg:col-span-6 space-y-6 text-left">
+                        <span class="bg-amber-600/25 border border-amber-500/30 text-amber-300 text-xs font-bold px-3.5 py-1.5 rounded-full tracking-wider inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-sparkles text-amber-400"></i> 数量限定・西条産直
+                        </span>
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                            西条の恵みを、ご自宅で。<br>
+                            「絹皮なす」お取り寄せ体験
+                        </h3>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                            デリケートで希少な幻のナスを、産地から特別な鮮度管理（保冷）でお届けします。まずはホームページ上での「お取り寄せシミュレーション」をお試しください。
+                        </p>
                         
-                        <div class="flex items-center justify-between text-xs text-gray-400">
-                            <span>数量</span>
-                            <div class="flex items-center space-x-3 bg-nasu-950 px-3 py-1.5 rounded-lg border border-purple-900">
-                                <button onclick="changeQty(-1)" class="hover:text-white transition-colors font-bold"><i class="fa-solid fa-minus"></i></button>
-                                <span id="item-qty" class="text-white font-bold px-2">1</span>
-                                <button onclick="changeQty(1)" class="hover:text-white transition-colors font-bold"><i class="fa-solid fa-plus"></i></button>
+                        <!-- 製品品質バッジ -->
+                        <div class="flex items-center gap-6 pt-2">
+                            <div class="flex items-center gap-2 text-xs text-purple-300">
+                                <i class="fa-solid fa-truck-ramp-box text-meisui-400 text-base"></i>
+                                <span>朝採り即日クール便配送</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-purple-300">
+                                <i class="fa-solid fa-shield-halved text-amber-500 text-base"></i>
+                                <span>西条市認定 伝統特産品</span>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="flex justify-between items-center text-xs text-gray-300 pt-1">
-                            <span>小計 (シミュレーション)</span>
-                            <span id="subtotal-price" class="font-bold text-meisui-400 text-sm">¥2,480</span>
-                        </div>
+                    <!-- 体験型カートシミュレーター -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-black/60 p-6 sm:p-8 rounded-2xl border border-purple-500/20 text-left space-y-4 shadow-xl">
+                            <div class="flex justify-between items-start pb-4 border-b border-purple-900/50">
+                                <div class="flex gap-3">
+                                    <!-- カート用の超小型イメージプレビュー (image_f0ceba.jpg) -->
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-nasu-900 border border-purple-500/20 flex-shrink-0">
+                                        <img src="image_f0ceba.jpg" alt="ミニなす画像" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] text-meisui-400 font-black tracking-wider uppercase block">特選 朝採れ新鮮便</span>
+                                        <h4 class="text-base font-bold text-white leading-tight mt-0.5">西条産 絹皮なす 5玉セット</h4>
+                                        <p class="text-[10px] text-gray-400 mt-1">※ざる・木箱は含まれません</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-black text-white block">¥2,480</span>
+                                    <span class="text-[9px] text-gray-400 font-normal block">(税込・送料別)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 数量コントロール -->
+                            <div class="flex items-center justify-between text-xs text-gray-300 py-1">
+                                <span class="font-medium"><i class="fa-solid fa-cubes text-purple-400 mr-1"></i> ご注文数量</span>
+                                <div class="flex items-center space-x-3 bg-nasu-950 px-3 py-1.5 rounded-lg border border-purple-900">
+                                    <button onclick="changeQty(-1)" class="hover:text-white transition-colors font-bold text-sm px-1"><i class="fa-solid fa-minus"></i></button>
+                                    <span id="item-qty" class="text-white font-bold px-3 text-sm">1</span>
+                                    <button onclick="changeQty(1)" class="hover:text-white transition-colors font-bold text-sm px-1"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
 
-                        <button onclick="addToSimulatedCart()" class="w-full bg-gradient-to-r from-purple-600 to-meisui-500 hover:from-purple-500 hover:to-meisui-400 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center gap-2 mt-2">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>体験カートに追加する</span>
-                        </button>
-                        
-                        <!-- 成功・完了メッセージ用のボックス（alertを避けるため） -->
-                        <div id="toast-message" class="hidden text-xs bg-meisui-500/20 text-meisui-300 border border-meisui-500/40 p-3 rounded-lg text-center animate-pulse">
-                            🎉 疑似カートに追加しました！ご体験ありがとうございます。
+                            <!-- 小計 -->
+                            <div class="flex justify-between items-center text-xs text-gray-300 pt-2 border-t border-purple-900/30">
+                                <span>合計金額 (シミュレーション)</span>
+                                <span id="subtotal-price" class="font-black text-meisui-400 text-lg sm:text-xl">¥2,480</span>
+                            </div>
+
+                            <!-- アクションボタン -->
+                            <button onclick="addToSimulatedCart()" class="w-full bg-gradient-to-r from-purple-600 via-purple-700 to-meisui-500 hover:from-purple-500 hover:to-meisui-400 text-white font-extrabold py-3.5 rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex items-center justify-center gap-2 mt-2">
+                                <i class="fa-solid fa-cart-arrow-down text-lg"></i>
+                                <span>カートに追加してみる</span>
+                            </button>
+                            
+                            <!-- トーストメッセージ -->
+                            <div id="toast-message" class="hidden text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3.5 rounded-lg text-center animate-pulse">
+                                <i class="fa-solid fa-circle-check mr-1.5 text-emerald-400"></i> 疑似お買い物カートに追加されました！ご体験ありがとうございます。
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -474,35 +533,35 @@
     </section>
 
     <!-- フッター -->
-    <footer class="bg-black py-16 border-t border-purple-950 text-gray-500 text-xs md:text-sm">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center">
+    <footer class="bg-black py-16 border-t border-purple-950/40 text-gray-500 text-xs md:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center">
             <div class="md:col-span-4 flex flex-col items-center md:items-start space-y-3">
                 <div class="flex items-center space-x-3">
                     <svg class="w-6 h-6 text-purple-400" viewBox="0 0 100 100" fill="currentColor">
                         <path d="M50,15 C40,15 32,25 32,38 C32,58 40,85 50,85 C60,85 68,58 68,38 C68,25 60,15 50,15 Z" fill="#4c1d95"/>
-                        <path d="M50,15 C48,15 45,10 42,8 C40,10 40,16 43,18 C38,18 34,22 35,28 C42,26 48,28 50,33 C52,28 58,26 65,28 C66,22 62,18 57,18 C60,16 60,10 58,8 C55,10 52,15 50,15 Z" fill="#15803d"/>
+                        <path d="M50,15 C48,15 45,10 42,8 C40,10 40,16 43,18 C38,18 34,22 35,28 C42,26 48,28 50,33 C52,28 58,26 65,28 C66,22 62,18 57,18 C60,16 60,10 58,8 C55,10 52,15 50,15 Z" fill="#16a34a"/>
                     </svg>
-                    <span class="text-white font-extrabold tracking-wider">愛媛西条 絹皮なす紹介サイト</span>
+                    <span class="text-white font-extrabold tracking-wider text-sm">愛媛西条 絹皮なす紹介サイト</span>
                 </div>
-                <p class="text-[11px] text-gray-500 text-center md:text-left">
-                    西条市が誇る最高峰の伝統野菜の魅力を発信しています。
+                <p class="text-[11px] text-gray-500 text-center md:text-left leading-relaxed">
+                    西条市が誇る最高峰の伝統野菜の魅力を、写真と体験を通じて届けています。
                 </p>
             </div>
-            <div class="md:col-span-4 flex justify-center space-x-6">
-                <a href="#story" class="hover:text-white transition-colors">なすについて</a>
+            <div class="md:col-span-4 flex justify-center space-x-6 text-xs font-medium">
+                <a href="#story" class="hover:text-white transition-colors">ブランド物語</a>
                 <a href="#recipe" class="hover:text-white transition-colors">絶品レシピ</a>
-                <a href="#saijo" class="hover:text-white transition-colors">アクセス</a>
+                <a href="#saijo" class="hover:text-white transition-colors">西条市の名水</a>
             </div>
             <div class="md:col-span-4 text-center md:text-right text-[11px] space-y-1">
                 <p>&copy; 2026 Saijo Kinukawa-Nasu. All Rights Reserved.</p>
-                <p class="text-purple-800">Designed with passion for Japanese traditional foods.</p>
+                <p class="text-purple-800">Designed beautifully using real crop imagery.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScriptインタラクション -->
     <script>
-        // 1. レシピ切り替えロジック
+        // 1. レシピタブの切り替え
         function switchRecipe(recipeId) {
             // すべてのコンテンツを非表示にする
             const contents = document.querySelectorAll('.recipe-content');
@@ -516,44 +575,44 @@
                 targetContent.classList.remove('hidden');
             }
 
-            // すべてのボタンのスタイルをリセット
+            // すべてのボタンのスタイルをデフォルト（非選択）にリセット
             const buttons = ['asazuke', 'yakinasu', 'tempura'];
             buttons.forEach(btn => {
                 const buttonElement = document.getElementById(`btn-${btn}`);
                 if (buttonElement) {
-                    buttonElement.className = "w-1/3 py-3 px-4 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all duration-300";
+                    buttonElement.className = "w-1/3 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm text-gray-400 hover:text-white transition-all duration-300";
                 }
             });
 
-            // アクティブなボタンのスタイルを設定
+            // 選択されたアクティブボタンのスタイルを適用
             const activeBtn = document.getElementById(`btn-${recipeId}`);
             if (activeBtn) {
-                activeBtn.className = "w-1/3 py-3 px-4 rounded-lg font-bold text-sm bg-gradient-to-r from-purple-600 to-meisui-500 text-white shadow-md transition-all duration-300";
+                activeBtn.className = "w-1/3 py-3 px-2 sm:px-4 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-purple-600 to-meisui-500 text-white shadow-md transition-all duration-300";
             }
         }
 
-        // 2. カート数量・金額シミュレーターロジック
+        // 2. 体験型カートの金額計算
         let currentQty = 1;
         const unitPrice = 2480;
 
         function changeQty(amount) {
             currentQty += amount;
             if (currentQty < 1) currentQty = 1;
-            if (currentQty > 10) currentQty = 10; // 最大10個制限
+            if (currentQty > 10) currentQty = 10; // 制限: 最大10セットまで
 
             document.getElementById('item-qty').innerText = currentQty;
             
-            // 金額の更新
+            // 金額計算＆表示更新
             const subtotal = unitPrice * currentQty;
             document.getElementById('subtotal-price').innerText = `¥${subtotal.toLocaleString()}`;
         }
 
-        // 疑似お買い物体験トースト
+        // 疑似お買い物体験トースト通知
         function addToSimulatedCart() {
             const toast = document.getElementById('toast-message');
             toast.classList.remove('hidden');
             
-            // 3秒後に非表示に戻す
+            // 4秒後に非表示にする
             setTimeout(() => {
                 toast.classList.add('hidden');
             }, 4000);
